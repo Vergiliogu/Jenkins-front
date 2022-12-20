@@ -3,13 +3,14 @@ pipeline {
   stages {
     stage('build') {
       steps {
-        echo 'Build was mounted';
+        sh 'npm install'
+        sh 'npm build'
       }
     }
     
     stage('test') {
       steps {
-        echo 'tests passed'
+        sh 'npm run test'
       }
     }
     
